@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/20 18:37:31 by vlee              #+#    #+#             */
-/*   Updated: 2018/02/20 18:37:33 by vlee             ###   ########.fr       */
+/*   Created: 2018/02/27 15:38:55 by vlee              #+#    #+#             */
+/*   Updated: 2018/02/27 15:39:16 by vlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char  *ft_strcpy(char *dst, char *src)
-{
-    int i;
+// void	ft_putstr(char *str)
+// {
+// 	write(1, str, sizeof(str));
+// }
 
-    i = 0;
-    while(src[i] != '\0')
-    {
-        dst[i] = src[i];
-        i++;
-    }
-    dst[i] = '\0';
-    return (dst);
+void ft_putstr(char *str)
+{
+	int i;
+
+	i = 0;
+	while(str[i] != '\0')
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
 }

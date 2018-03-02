@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/20 18:37:31 by vlee              #+#    #+#             */
-/*   Updated: 2018/02/20 18:37:33 by vlee             ###   ########.fr       */
+/*   Created: 2018/02/27 17:48:14 by vlee              #+#    #+#             */
+/*   Updated: 2018/02/27 17:48:19 by vlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char  *ft_strcpy(char *dst, char *src)
+void ft_putnbr(int nbr)
 {
-    int i;
-
-    i = 0;
-    while(src[i] != '\0')
-    {
-        dst[i] = src[i];
-        i++;
-    }
-    dst[i] = '\0';
-    return (dst);
+  if (nbr < 0)
+  {
+    ft_putchar('-');
+    ft_putnbr(-nbr);
+  }
+  else if (nbr > 9)
+  {
+    ft_putnbr(nbr / 10);
+    ft_putnbr(nbr % 10);
+  }
+  else
+  {
+    ft_putchar(nbr + '0');
+  }
 }

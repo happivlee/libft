@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/20 18:38:29 by vlee              #+#    #+#             */
-/*   Updated: 2018/02/20 18:38:32 by vlee             ###   ########.fr       */
+/*   Created: 2018/03/06 17:01:30 by vlee              #+#    #+#             */
+/*   Updated: 2018/03/06 17:01:33 by vlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlcat(char *dest, const char*src, size_t size)
-{
+void *ft_memset(void *ptr, int x, size_t n) {
   int i;
-  size_t j;
+  unsigned char *tmp;
 
-  i = ft_strlen(dest);
-  j = 0;
-  //concats to end of dest up to size given
-  while (j < size - 1)
+  i = 0;
+  tmp = (unsigned char*)ptr;
+  //starting from the pointer
+  while (i < n)
   {
-    dest[i] = src[j];
+    //fill x for n number of bytes
+    *tmp = (unsigned char)x;
+    tmp++;
     i++;
-    j++;
   }
-  //null terminated
-  dest[i] = '\0';
-  //returns the str
-  //printf("%s\n", dest); for testing only
-  return ft_strlen(dest);
+  return (ptr);
 }

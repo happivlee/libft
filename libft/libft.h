@@ -29,5 +29,10 @@ void	ft_putstr(char *s);
 void  ft_putchar_fd(char c, int fd);
 void  ft_putnbr(int nbr);
 char *ft_strjoin(char const *s1, char const *s2);
+size_t ft_strlcat(char *dst, const char *src, size_t size);
+void *ft_memset(void *ptr, int x, size_t n);
+void ft_bzero(void *s, size_t n);
+void *ft_memcpy(void *dst, const void *src, size_t n);
+void *ft_memccpy(void *dst, const void *src, int c, size_t n);
 
 #endif

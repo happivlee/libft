@@ -76,11 +76,37 @@ int main(void)
     // char cat1[6] = "hello";
     // char cat2[7] = "world!";
     // printf("%s\n", ft_strcat(cat1, cat2));
-    char ncat1[9] = "lollipop";
-    char ncat2[8] = "sticker";
-    printf("%s\n", ft_strncat(ncat1, ncat2, 5));
+    // char ncat1[9] = "lollipop"; //still need to test
+    // char ncat2[8] = "sticker";
+    // printf("%s\n", ft_strncat(ncat1, ncat2, 5));
     // char join1[4] = "hot";     //still need to test
     // char join2[6] = "cocoa";
     //printf("%s\n", ft_strjoin(join1, join2));
+    // char lcat1[4] = "Kit";
+    // char lcat2[10] = "Katherine";
+    // printf("%zu\n", ft_strlcat(lcat1, lcat2, 4)); //size also accounts for NUL
+    // char mem1[11] = "'--------'\0";
+    // printf("before memset: %s\n", mem1);
+    // ft_memset(mem1 + 1, '.', 8*sizeof(char));
+    // printf("after memset: %s\n", mem1);
+    // char bz1[5] = "holi\0";
+    // printf("before bzero: %s\n", bz1);
+    // ft_bzero(bz1, 2);
+    // printf("after bzero: %s\n", bz1);
+    // char memcpy1[50];
+    // const char memcpy2[50] = "Hallelujah";
+    // printf("before ft_memcpy: %s\n", memcpy1);
+    // ft_memcpy(memcpy1, memcpy2, 6);
+    // printf("after ft_memcpy: %s\n", memcpy1);
+    char memccpy_dest1[50];
+    const char memccpy_src1[50] = "Hallelujah";
+    printf("test #1 before ft_memccpy: %s\n", memccpy_dest1);
+    ft_memccpy(memccpy_dest1, memccpy_src1, "e", 6); //test for when it finds c
+    printf("after ft_memccpy: %s\n", memccpy_dest1);
+    char memccpy_dest2[50];
+    const char memccpy_src2[50] = "Party time!";
+    printf("test #2 before ft_memccpy: %s\n", memccpy_dest2);
+    ft_memccpy(memccpy1, memccpy2, "s", 6); //test for when it doesn't find c
+    printf("after ft_memccpy: %s\n", memccpy_dest2);
     return (0);
 }

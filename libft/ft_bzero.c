@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/20 18:38:29 by vlee              #+#    #+#             */
-/*   Updated: 2018/02/20 18:38:32 by vlee             ###   ########.fr       */
+/*   Created: 2018/03/06 18:58:15 by vlee              #+#    #+#             */
+/*   Updated: 2018/03/07 16:03:06 by vlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+//may need to include strings.h
 
-size_t ft_strlcat(char *dest, const char*src, size_t size)
-{
+void ft_bzero(void *s, size_t n) {
+  if (n == 0)
+      return;
+  //writes n zeroed bytes to the string s
   int i;
-  size_t j;
+  unsigned char *tmp;
 
-  i = ft_strlen(dest);
-  j = 0;
-  //concats to end of dest up to size given
-  while (j < size - 1)
+  i = 0;
+  tmp = (unsigned char *)s;
+  while (i < n)
   {
-    dest[i] = src[j];
+    *tmp = '0';
+    tmp++;
     i++;
-    j++;
   }
-  //null terminated
-  dest[i] = '\0';
-  //returns the str
-  //printf("%s\n", dest); for testing only
-  return ft_strlen(dest);
 }

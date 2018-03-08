@@ -17,8 +17,8 @@ char  *ft_strncpy(char *dst, const char *src, size_t len)
     size_t i;
 
     i = 0;
-    if(ft_strlen(src) > ft_strlen(dst))
-        dst = (char *)malloc(sizeof(ft_strlen(src) + 1));
+    // if(ft_strlen(src) > ft_strlen(dst))
+    //     dst = (char *)malloc(sizeof(ft_strlen(src) + 1));
     while (i < len)
     {
       dst[i] = src[i];

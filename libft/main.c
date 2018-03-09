@@ -98,15 +98,32 @@ int main(void)
     // printf("before ft_memcpy: %s\n", memcpy1);
     // ft_memcpy(memcpy1, memcpy2, 6);
     // printf("after ft_memcpy: %s\n", memcpy1);
-    char memccpy_dest1[50];
-    const char memccpy_src1[50] = "Hallelujah";
-    printf("test #1 before ft_memccpy: %s\n", memccpy_dest1);
-    ft_memccpy(memccpy_dest1, memccpy_src1, "e", 6); //test for when it finds c
-    printf("after ft_memccpy: %s\n", memccpy_dest1);
-    char memccpy_dest2[50];
-    const char memccpy_src2[50] = "Party time!";
-    printf("test #2 before ft_memccpy: %s\n", memccpy_dest2);
-    ft_memccpy(memccpy1, memccpy2, "s", 6); //test for when it doesn't find c
-    printf("after ft_memccpy: %s\n", memccpy_dest2);
+    // char memccpy_dest1[50];//                         still need to finish memccpy
+    // const char memccpy_src1[50] = "Hallelujah";
+    // printf("test #1 before ft_memccpy: %s\n", memccpy_dest1);
+    // ft_memccpy(memccpy_dest1, memccpy_src1, "e", 6); //test for when it finds c
+    // printf("after ft_memccpy: %s\n", memccpy_dest1);
+    // char memccpy_dest2[50];
+    // const char memccpy_src2[50] = "Party time!";
+    // printf("test #2 before ft_memccpy: %s\n", memccpy_dest2);
+    // ft_memccpy(memccpy1, memccpy2, "s", 6); //test for when it doesn't find c
+    // printf("after ft_memccpy: %s\n", memccpy_dest2);
+    // char cmp1[5] = "baby\0";
+    // char cmp2[7] = "babies\0";
+    // printf("difference bet baby and babies: %i\n", ft_strcmp(cmp1, cmp2));
+    // char ncmp1[5] = "Hera\0";
+    // char ncmp2[7] = "Heresy\0";
+    // printf("difference bet Hera and Heresy: %i\n", ft_strncmp(ncmp1, ncmp2, 3));
+    // char ncmp3[5] = "Hera\0";
+    // char ncmp4[7] = "Heresy\0";
+    // printf("difference bet Hera and Heresy: %i\n", ft_strncmp(ncmp3, ncmp4, 5));
+    // printf("toupper test with v: %c\n", ft_toupper('v'));
+    // printf("toupper test with R: %c\n", ft_toupper('R'));
+    // printf("toupper test with 5: %c\n", ft_toupper('5'));
+    // printf("toupper test with *: %c\n", ft_toupper('*'));
+    // printf("tolower test with v: %c\n", ft_tolower('v'));
+    // printf("tolower test with R: %c\n", ft_tolower('R'));
+    // printf("tolower test with 5: %c\n", ft_tolower('5'));
+    // printf("tolower test with *: %c\n", ft_tolower('*'));
     return (0);
 }

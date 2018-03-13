@@ -125,5 +125,22 @@ int main(void)
     // printf("tolower test with R: %c\n", ft_tolower('R'));
     // printf("tolower test with 5: %c\n", ft_tolower('5'));
     // printf("tolower test with *: %c\n", ft_tolower('*'));
+    // char chr1[6] = "hello\0";
+    // printf("%s\n", ft_strchr(chr1, 'l'));
+    // char rchr1[9] = "Pochacco\0";
+    // printf("%s\n", ft_strrchr(rchr1, 'c'));
+    // char stack1[13] = "pineappleapp\0";
+    // char needle1[4] = "app\0";
+    // printf("%s\n", ft_strstr(stack1, needle1));
+    // char nstack1[13] = "pineapleapp\0";
+    // char nneedle1[4] = "app\0";
+    // printf("should be NULL: %s\n", ft_strnstr(nstack1, nneedle1, 6));
+    // printf("should show 'app': %s\n", ft_strnstr(nstack1, nneedle1, 13));
+    printf("should be 1: %d\n", ft_isalpha('a'));
+    printf("should be 1: %d\n", ft_isalpha('F'));
+    printf("should be 0: %d\n", ft_isalpha('8'));
+    printf("should be 0: %d\n", ft_isdigit('a'));
+    printf("should be 1: %d\n", ft_isdigit('7'));  //can it not take 7 as opposed to '7'?
+    printf("should be 1: %d\n", ft_isdigit('8'));
     return (0);
 }

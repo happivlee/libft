@@ -136,11 +136,23 @@ int main(void)
     // char nneedle1[4] = "app\0";
     // printf("should be NULL: %s\n", ft_strnstr(nstack1, nneedle1, 6));
     // printf("should show 'app': %s\n", ft_strnstr(nstack1, nneedle1, 13));
-    printf("should be 1: %d\n", ft_isalpha('a'));
-    printf("should be 1: %d\n", ft_isalpha('F'));
-    printf("should be 0: %d\n", ft_isalpha('8'));
-    printf("should be 0: %d\n", ft_isdigit('a'));
-    printf("should be 1: %d\n", ft_isdigit('7'));  //can it not take 7 as opposed to '7'?
-    printf("should be 1: %d\n", ft_isdigit('8'));
+    // printf("should be 1: %d\n", ft_isalpha('a'));
+    // printf("should be 1: %d\n", ft_isalpha('F'));
+    // printf("should be 0: %d\n", ft_isalpha('8'));
+    // printf("should be 0: %d\n", ft_isdigit('a'));
+    // printf("should be 1: %d\n", ft_isdigit('7'));  //can it not take 7 as opposed to '7'?
+    // printf("should be 1: %d\n", ft_isdigit('8'));
+    // printf("isalnum should return 1: %d\n", ft_isalnum('H'));
+    // printf("isalnum should return 1: %d\n", ft_isalnum('i'));
+    // printf("isalnum should return 1: %d\n", ft_isalnum('8'));
+    // printf("isalnum should return 0: %d\n", ft_isalnum('.'));
+    // printf("isascii should return 1: %d\n", ft_isascii('H'));
+    // printf("isascii should return 1: %d\n", ft_isascii('i'));
+    // printf("isascii should return 1: %d\n", ft_isascii('8'));
+    // printf("isascii should return 1: %d\n", ft_isascii('.'));  //may need to test integers between 122 and 177
+	printf("isprint should return 1: %d\n", ft_isprint('H'));
+    printf("isprint should return 1: %d\n", ft_isprint('i'));
+    printf("isprint should return 1: %d\n", ft_isprint('}'));
+    printf("isprint should return 0: %d\n", ft_isprint(28));
     return (0);
 }

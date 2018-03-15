@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/12 15:39:27 by vlee              #+#    #+#             */
-/*   Updated: 2018/03/12 15:39:43 by vlee             ###   ########.fr       */
+/*   Created: 2018/03/14 19:40:37 by vlee              #+#    #+#             */
+/*   Updated: 2018/03/14 19:40:40 by vlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-    char *tmp;
+	const char *cpy1;
+	const char *cpy2;
+	int i;
 
-    tmp = (const char *)s;
-    //returns a pointer to the char location if char c is found
-    while (*tmp != '\0')
-    {
-      if (c == *tmp)
-          return tmp;
-      tmp++;
-    }
-    if (*tmp == '\0')
-        return tmp;
-    //points to NULL if character not found
-    else
-        return NULL;
+	cpy1 = (const char *)s1;
+	cpy2 = (const char *)s2;
+	i = 0;
+	while(i < n)
+	{
+		//compare a copy of s1 and s2
+		//if same
+		if (*cpy1 != *cpy2)
+			//return diff - should equal 0
+			return (*cpy1 - *cpy2);
+		cpy1++;
+		cpy2++;
+		i++;
+	}
+	return (0);
 }

@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/12 15:39:27 by vlee              #+#    #+#             */
-/*   Updated: 2018/03/12 15:39:43 by vlee             ###   ########.fr       */
+/*   Created: 2018/03/14 20:27:16 by vlee              #+#    #+#             */
+/*   Updated: 2018/03/14 20:27:17 by vlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+int	ft_atoi(const char *str)
 {
-    char *tmp;
-
-    tmp = (const char *)s;
-    //returns a pointer to the char location if char c is found
-    while (*tmp != '\0')
-    {
-      if (c == *tmp)
-          return tmp;
-      tmp++;
-    }
-    if (*tmp == '\0')
-        return tmp;
-    //points to NULL if character not found
-    else
-        return NULL;
+	
 }

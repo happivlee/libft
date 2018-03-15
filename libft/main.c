@@ -41,16 +41,16 @@ int main(void)
     // char s10[4] = "yoo";
     // printf("%s\n", ft_strcpy(s9, s10)); //easy
     // size_t len;
-    // len = 4;
-    // printf("%s\n", ft_strncpy("test", "whoa", len)); //same length src & dest - whoa
-    // len = 4;
-    // printf("%s\n", ft_strncpy("hello", "Ha", len)); //src is shorter than dest - num greater than dest? - Ha
-    // len = 3;
-    // printf("%s\n", ft_strncpy("World", "Sleepy", len)); //src longer than dest, but len = 3 ? - Sle
-    // len = 6;
-    // printf("%s\n", ft_strncpy("$M$Y@JH", "GJ$@Y(GKWHM)", len)); //src longer than dest w/ rando symbols - GJ$@Y(
-    // len = 2;
-    // printf("%s\n", ft_strncpy("sup", "yoo", len)); //easy - yo
+    size_t len1 = 4;
+    printf("%s\n", ft_strncpy("test", "whoa", len1)); //same length src & dest - whoa
+    size_t len2 = 4;
+    printf("%s\n", ft_strncpy("hello", "Ha", len2)); //src is shorter than dest - num greater than dest? - Ha
+    size_t len3 = 3;
+    printf("%s\n", ft_strncpy("World", "Sleepy", len3)); //src longer than dest, but len = 3 ? - Sle
+    size_t len4 = 6;
+    printf("%s\n", ft_strncpy("$M$Y@JH", "GJ$@Y(GKWHM)", len4)); //src longer than dest w/ rando symbols - GJ$@Y(
+    size_t len5 = 2;
+    printf("%s\n", ft_strncpy("sup", "yoo", len5)); //easy - yo
     // ft_putchar('s');
     // ft_putchar('t');
     // ft_putchar('o');
@@ -150,9 +150,26 @@ int main(void)
     // printf("isascii should return 1: %d\n", ft_isascii('i'));
     // printf("isascii should return 1: %d\n", ft_isascii('8'));
     // printf("isascii should return 1: %d\n", ft_isascii('.'));  //may need to test integers between 122 and 177
-	printf("isprint should return 1: %d\n", ft_isprint('H'));
-    printf("isprint should return 1: %d\n", ft_isprint('i'));
-    printf("isprint should return 1: %d\n", ft_isprint('}'));
-    printf("isprint should return 0: %d\n", ft_isprint(28));
+	// printf("isprint should return 1: %d\n", ft_isprint('H'));
+    // printf("isprint should return 1: %d\n", ft_isprint('i'));
+    // printf("isprint should return 1: %d\n", ft_isprint('}'));
+    // printf("isprint should return 0: %d\n", ft_isprint(28));
+	// char mmovedst[7] = "tomboy\0";
+	// char mmovesrc[4] = "cat\0";
+	// printf("destination before: %s\n", mmovedst);
+	// printf("source before: %s\n", mmovesrc);
+	// ft_memmove(mmovedst + 3, mmovesrc, 3);
+	// printf("destination after: %s\n", mmovedst);
+	// printf("source after: %s\n", mmovesrc);
+	// char memchr1[9] = "firework\0";
+	// printf("the first letter match begins at: %s\n",ft_memchr(memchr1,'w',6));
+	// printf("memchr should return NULL: %s\n",ft_memchr(memchr1,'w', 3));
+	// char mcmp1[10] = "boobytrap\0";
+	// char mcmp2[9] = "booboo\0\0\0";
+	// char mcmp3[11] = "booboo\0bop\0";
+	// printf("should be the same - therefore - '0': %d\n", ft_memcmp(mcmp1, mcmp2, 4));
+	// printf("should be different - therefore - 'y - o': %d\n", ft_memcmp(mcmp1, mcmp2, 6));
+	// printf("comparing w/ strncmp - should be zero: %d\n", ft_strncmp(mcmp2, mcmp3, 8));
+	// printf("comparing w/ memcmp - should be non - zero: %d\n", ft_memcmp(mcmp2, mcmp3, 8));
     return (0);
 }

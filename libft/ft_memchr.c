@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/12 15:39:27 by vlee              #+#    #+#             */
-/*   Updated: 2018/03/12 15:39:43 by vlee             ###   ########.fr       */
+/*   Created: 2018/03/14 18:51:37 by vlee              #+#    #+#             */
+/*   Updated: 2018/03/14 18:51:39 by vlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+void *ft_memchr(const void *s, int c, size_t n)
 {
-    char *tmp;
+	char *tmp;
 
-    tmp = (const char *)s;
-    //returns a pointer to the char location if char c is found
-    while (*tmp != '\0')
-    {
-      if (c == *tmp)
-          return tmp;
-      tmp++;
-    }
-    if (*tmp == '\0')
-        return tmp;
-    //points to NULL if character not found
-    else
-        return NULL;
+	tmp = (char *)s;
+	while (n)
+	{
+		//check string s for an occurance of c within n byte
+		if (*tmp == c)
+		//returns a pointer to the byte located,
+			return tmp;
+		tmp++;
+		n--;
+	}
+	return (NULL);
 }

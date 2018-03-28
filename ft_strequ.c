@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/01 16:02:35 by vlee              #+#    #+#             */
-/*   Updated: 2018/03/01 16:02:45 by vlee             ###   ########.fr       */
+/*   Created: 2018/03/27 12:31:35 by vlee              #+#    #+#             */
+/*   Updated: 2018/03/27 12:31:46 by vlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strjoin(char const *s1, char const *s2)
+int	ft_strequ(char const *s1, char const *s2)
 {
-	char *result;
-
-	if (!s1 && !s2)
-		return (NULL);
-	if (!s1)
-		return (ft_strdup(s2));
-	if (!s2)
-		return (ft_strdup(s1));
-	result = ft_strnew(ft_strlen(s1) + ft_strlen(s2));
-	if (result == NULL)
-		return (NULL);
-	result = ft_strcpy(result, s1);
-	result = ft_strcat(result, s2);
-	return (result);
+	if(s1 == NULL || s2 == NULL)
+		return (0);
+	if (ft_strcmp(s1, s2) != 0)
+		return (0);
+	return (1);
 }

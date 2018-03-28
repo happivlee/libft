@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/01 16:02:35 by vlee              #+#    #+#             */
-/*   Updated: 2018/03/01 16:02:45 by vlee             ###   ########.fr       */
+/*   Created: 2018/03/27 12:40:12 by vlee              #+#    #+#             */
+/*   Updated: 2018/03/27 12:57:00 by vlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strjoin(char const *s1, char const *s2)
+int	ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	char *result;
-
-	if (!s1 && !s2)
-		return (NULL);
-	if (!s1)
-		return (ft_strdup(s2));
-	if (!s2)
-		return (ft_strdup(s1));
-	result = ft_strnew(ft_strlen(s1) + ft_strlen(s2));
-	if (result == NULL)
-		return (NULL);
-	result = ft_strcpy(result, s1);
-	result = ft_strcat(result, s2);
-	return (result);
+	if (s1 == NULL || s2 == NULL || n == 0)
+		return (0);
+	while (n)
+	{
+		if (*s1 != *s2)
+			return (0);
+		else
+		{
+			s1++;
+			s2++;
+		}
+		n--;
+	}
+	return (1);
 }

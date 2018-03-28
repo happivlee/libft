@@ -1,31 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/01 16:02:35 by vlee              #+#    #+#             */
-/*   Updated: 2018/03/01 16:02:45 by vlee             ###   ########.fr       */
+/*   Created: 2018/03/27 16:38:31 by vlee              #+#    #+#             */
+/*   Updated: 2018/03/27 16:38:39 by vlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strtrim(char const *s)
 {
+	int len;
+	int i;
 	char *result;
 
-	if (!s1 && !s2)
+	if(s == NULL)
 		return (NULL);
-	if (!s1)
-		return (ft_strdup(s2));
-	if (!s2)
-		return (ft_strdup(s1));
-	result = ft_strnew(ft_strlen(s1) + ft_strlen(s2));
+	len =ft_strlen(s);
+	i = 0;
+	while(s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
+	{
+		i++;
+	}
+	if (i == len)
+		return (ft_strnew(0));
+	while(s[len - 1] == ' ' || s[len - 1] == '\t' || s[len - 1] == '\n')
+	{
+		len--;
+	}
+
+	result = ft_memalloc(len - i + 1);
 	if (result == NULL)
 		return (NULL);
-	result = ft_strcpy(result, s1);
-	result = ft_strcat(result, s2);
+	result = ft_strncpy(result, &s[i], len - i);
+	result[len - i + 1] = '\0';
 	return (result);
 }

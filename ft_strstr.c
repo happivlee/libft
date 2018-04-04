@@ -6,57 +6,24 @@
 /*   By: vlee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 18:23:35 by vlee              #+#    #+#             */
-/*   Updated: 2018/03/12 18:23:36 by vlee             ###   ########.fr       */
+/*   Updated: 2018/04/03 20:18:56 by vlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strstr(const char *haystack, const char *needle)
+char	*ft_strstr(const char *haystack, const char *needle)
 {
-    int len;
-    int needle_len;
-    int i;
-    int j;
-    char *match;
+	int nlen;
 
-    len = ft_strlen(haystack);
-    needle_len = ft_strlen(needle);
-    i = 0;
-    j = 0;
-    match = NULL;
-    if (needle_len == 0)
-        return ((char *)haystack);
-    while (haystack[i] != '\0')
-    {
-        if(haystack[i] == needle[j])
-        {
-            match = (char *)&haystack[i];
-            while(haystack[i] == needle[j])
-            {
-                i++;
-                j++;
-                if(needle[j] == '\0')
-                    return (match);
-            }
-        }
-        else
-        {
-            i++;
-            j = 0;
-            match = 0;
-        }
-    }
-    return (match);
+	nlen = ft_strlen(needle);
+	if (!(*needle))
+		return ((char *)haystack);
+	while (*haystack)
+	{
+		if (strncmp(haystack, needle, nlen) == 0)
+			return ((char *)haystack);
+		haystack++;
+	}
+	return (NULL);
 }
-
-//while haystack isn't NULL
-    //check to see if haystack[i] == needle[j]
-        //if needle[j] == ''\0'
-            //return match;
-        //i++
-        //j++
-    //else
-        //j=0
-        //match = NULL;
-        //i++

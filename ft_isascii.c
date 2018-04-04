@@ -6,16 +6,16 @@
 /*   By: vlee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/13 17:13:46 by vlee              #+#    #+#             */
-/*   Updated: 2018/03/13 17:13:49 by vlee             ###   ########.fr       */
+/*   Updated: 2018/04/03 16:46:51 by vlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
-    if (c >= 0 && c <= 177)
-        return (1);
-    else
-        return (0);
+	if (c >= 0 && c <= 127)
+		return (1);
+	else
+		return (0);
 }

@@ -6,37 +6,35 @@
 /*   By: vlee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/13 20:13:17 by vlee              #+#    #+#             */
-/*   Updated: 2018/03/13 20:13:20 by vlee             ###   ########.fr       */
+/*   Updated: 2018/04/03 18:44:09 by vlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	//need to make copies of both strings
-	char *pd;
-	char *ps;
-	char *tmp[len];
-	size_t i;
+	unsigned char		*pd;
+	const unsigned char	*ps;
+	size_t				i;
 
-	pd = (char *)dst;
-	ps = (char *)src;
-	i = 0;
-
-	while( i < len )
+	pd = dst;
+	ps = src;
+	if (dst < src)
 	{
-		tmp[i] = &ps[i];
-		i++;
+		i = 0;
+		while (i < len)
+		{
+			pd[i] = ps[i];
+			i++;
+		}
 	}
-	i = 0;
-	while (len > 0)
+	else if (dst > src)
 	{
-		*pd = *tmp[i];
-		pd++;
-		i++;
-		len--;
+		while (len--)
+		{
+			pd[len] = ps[len];
+		}
 	}
-	//return pointer to the original str dst's value
-	return dst;
+	return (dst);
 }

@@ -65,36 +65,127 @@ char	**ft_strsplit(char const *s, char c)
 	int current_word_index;
 	char **splitwords;
 
-	//if no char c, return null - constraint
-	if (!s || ft_strchr(s, c) == NULL)
+	if (!s)
 		return (NULL);
 	current_word = 0;
 	str_index = 0;
 	total_word_count = ft_countwords(s, c);
-	//create a 2 dimensional array w/ room for the relevant number of words
-	splitwords = (char **)malloc(sizeof(char *) * total_word_count + 1);
-	//fill in each word
-	while (current_word < total_word_count)
+	if (!(splitwords = (char **)malloc(sizeof(char *) * total_word_count + 1)))
+		return (NULL);
+	while (s[str_index] && current_word < total_word_count)
 	{
 		current_word_index = 0;
-		//allocate memory == word length
-		splitwords[current_word] = ft_strnew(ft_countchars(&s[str_index], c));
-		//may need to do a protect??
-		//increment str counter until it's not a c
-		while (s[str_index] == c)
+		if (!(splitwords[current_word] = ft_strnew(ft_countchars(&s[str_index], c))))
+			return (NULL);
+		while (s[str_index] && s[str_index] == c && s[str_index] != '\0')
 		{
 			str_index++;
 		}
-		while (s[str_index] != c && s[str_index] != '\0')
+		while (s[str_index] && s[str_index] != c && s[str_index] != '\0')
 		{
 			//copy the str value up through the word length
+			//write(1, s + str_index, 1);
 			splitwords[current_word][current_word_index] = s[str_index];
+			//write(1, splitwords[current_word] + current_word_index, 1);
 			current_word_index++;
 			str_index++;
 		}
-		splitwords[current_word][current_word_index] = '\0';
+		//printf("%i: {%s}\n", total_word_count, splitwords[current_word]);
 		current_word++;
 	}
-	splitwords[current_word] = NULL;
+	splitwords[total_word_count] = NULL;
+	//if(splitwords[total_word_count] == NULL) {
+		//printf("yay!");
+	//}
 	return (splitwords);
 }
+/*
+void			test_ft_strsplit_basic() {
+
+	char	**ret = (char*[6]){"split", "this", "for", "me", "!", NULL};
+
+
+			char	*s = "      split       this for   me  !       ";
+
+			char	**r = ft_strsplit(s, ' ');
+			while (*r) {
+				write(1, "wooo\n", 5);
+				printf("TEST_FAILED_ON: {%s,%s}\n",*ret, *r);
+				if (strcmp(*r, *ret)) {
+					printf("TEST_FAILED_ON: {%s,%s}\n",*ret, *r);
+				}
+				r++;
+				ret++;
+			}
+			printf("TEST_SUCCESS\n");
+
+}
+
+void			test_ft_strsplit_space() {
+	char	**ret = (char*[1]){NULL};
+
+
+			char	*s = "                  ";
+
+			char	**r = ft_strsplit(s, ' ');
+			while (*r) {
+				if (strcmp(*r, *ret)) {
+					printf("TEST_FAILED_ON: {%s,%s}\n", *ret, *r);
+				}
+				r++;
+				ret++;
+			}
+			printf("TEST_SUCCESS\n");
+}
+
+void			test_ft_strsplit_end() {
+
+	char	**ret = (char*[2]){"olol", NULL};
+
+	char	*s = "olol                     ";
+
+			char	**r = ft_strsplit(s, ' ');
+			while (*r) {
+				if (strcmp(*r, *ret)) {
+					printf("TEST_FAILED_ON: {%s,%s}\n", *ret, *r);
+				}
+				r++;
+				ret++;
+			}
+			printf("TEST_SUCCESS\n");
+}
+
+void			test_ft_strsplit_zero() {
+	char	**ret = (char*[6]){"split", "this", "for", "me", "!", NULL};
+	char	*s = "      split       this for   me  !       ";
+
+
+			char	**r = ft_strsplit(s, ' ');
+
+			while (*r) {
+				if (strcmp(*r, *ret)) {
+					printf("TEST_FAILED_ON: {%s:%s}\n", *r, *ret);
+				}
+				r++;
+				ret++;
+			}
+			printf("TEST_SUCCESS\n");
+}
+
+void			test_ft_strsplit_null() {
+			char	**ret = ft_strsplit(NULL, ' ');
+			if (!ret)
+				printf("TEST_SUCCESS\n");
+			else
+				printf("TEST_FAILED\n");
+}
+
+int main(void) {
+	test_ft_strsplit_basic();
+	test_ft_strsplit_space();
+	test_ft_strsplit_end();
+	test_ft_strsplit_zero();
+	test_ft_strsplit_null();
+	return (0);
+}
+*/

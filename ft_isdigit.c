@@ -6,16 +6,16 @@
 /*   By: vlee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 19:53:06 by vlee              #+#    #+#             */
-/*   Updated: 2018/03/12 19:53:09 by vlee             ###   ########.fr       */
+/*   Updated: 2018/04/03 16:47:40 by vlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    if (c >= 48 && c <= 57)
-        return (1);
-    else
-        return (0);
+	if (c >= 48 && c <= 57)
+		return (1);
+	else
+		return (0);
 }

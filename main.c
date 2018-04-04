@@ -82,9 +82,9 @@ int main(void)
     // char join1[4] = "hot";     //still need to test
     // char join2[6] = "cocoa";
     //printf("%s\n", ft_strjoin(join1, join2));
-    // char lcat1[4] = "Kit";
-    // char lcat2[10] = "Katherine";
-    // printf("%zu\n", ft_strlcat(lcat1, lcat2, 4)); //size also accounts for NUL
+    char lcat1[4] = "Kit";
+    char lcat2[10] = "Katherine";
+    printf("%zu\n", ft_strlcat(lcat1, lcat2, 3));
     // char mem1[11] = "'--------'\0";
     // printf("before memset: %s\n", mem1);
     // ft_memset(mem1 + 1, '.', 8*sizeof(char));
@@ -171,7 +171,31 @@ int main(void)
 	// printf("should be different - therefore - 'y - o': %d\n", ft_memcmp(mcmp1, mcmp2, 6));
 	// printf("comparing w/ strncmp - should be zero: %d\n", ft_strncmp(mcmp2, mcmp3, 8));
 	// printf("comparing w/ memcmp - should be non - zero: %d\n", ft_memcmp(mcmp2, mcmp3, 8));
-	printf("using atoi: %d\n", atoi("\n +900"));
-	printf("using ft_atoi: %d\n", ft_atoi("\n +900"));
+	// printf("using atoi: %d\n", atoi("\n +900"));
+	// printf("using ft_atoi: %d\n", ft_atoi("\n +900"));
+	//int	ft_countwords(char const *s, char c)
+	// char cw_string[12] = "hello there\0";
+	// printf("number of words: %d\n", ft_countwords(cw_string, ' '));
+	// char cc_string[7] = "hello \0";
+	// printf("number of chars: %d\n", ft_countchars(cc_string, ' '));
+	// char **splitwords;
+	// // char ss_string[41] = "      split       this for   me  !       ";
+	// char ss_test[1] = "";
+	// char	**ret = (char*[6]){"split", "this", "for", "me", "!", NULL};
+	// splitwords = ft_strsplit(ss_string, ' ');
+	// int cmp_res = 0;
+	// cmp_res = strcmp(splitwords[5], NULL);
+	// printf("cmp_res in NULL = %d\n", cmp_res);
+	// cmp_res = 0;
+	// int word = 0;
+	// while (word < 6)
+	// {
+	// 	cmp_res = ft_strcmp(splitwords[word], ret[word]);
+	// 	printf("cmp_res = %d\n", cmp_res);
+	// 	printf("the %dth word after being split: %s\n", word, splitwords[word]);
+	// 	word++;
+	// // }
+	// splitwords = ft_strsplit(ss_test, ' ');
+	// 	printf("the word we're accessing: %s", splitwords[1]);
     return (0);
 }

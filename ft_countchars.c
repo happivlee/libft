@@ -6,13 +6,13 @@
 /*   By: vlee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 16:24:15 by vlee              #+#    #+#             */
-/*   Updated: 2018/03/30 16:24:27 by vlee             ###   ########.fr       */
+/*   Updated: 2018/04/03 17:02:29 by vlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_countchars(const char *s, int c)
+int	ft_countchars(const char *s, int c)
 {
 	int i;
 	int len;

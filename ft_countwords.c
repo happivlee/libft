@@ -6,7 +6,7 @@
 /*   By: vlee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 16:08:49 by vlee              #+#    #+#             */
-/*   Updated: 2018/03/30 16:09:20 by vlee             ###   ########.fr       */
+/*   Updated: 2018/04/03 17:04:24 by vlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@ int	ft_countwords(char const *s, char c)
 	word_count = 0;
 	while (*s != '\0')
 	{
-			while (*s == c)
+		while (*s == c)
+		{
+			s++;
+		}
+		if (*s && *s != c)
+		{
+			word_count++;
+			while (*s != c && *s != '\0')
 			{
 				s++;
 			}
-			if (*s != c)
-			{
-				word_count++;
-				while (*s != c && *s != '\0')
-				{
-					s++;
-				}
-			}
+		}
 	}
-	return word_count;
+	return (word_count);
 }

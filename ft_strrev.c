@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/27 17:48:14 by vlee              #+#    #+#             */
-/*   Updated: 2018/04/06 17:44:41 by vlee             ###   ########.fr       */
+/*   Created: 2018/04/06 15:54:14 by vlee              #+#    #+#             */
+/*   Updated: 2018/04/06 15:54:22 by vlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putnbr(int n)
+char *ft_strrev(char *s)
 {
-	if (n == -2147483648)
-		ft_putstr("-2147483648");
-	else
+	int len;
+	int i;
+	char *result;
+
+	len = ft_strlen(s);
+	result = ft_strdup(s);
+	i = 0;
+	while (len)
 	{
-		if (n < 0)
-		{
-			ft_putchar('-');
-			ft_putnbr(-n);
-		}
-		else if (n > 9)
-		{
-			ft_putnbr(n / 10);
-			ft_putnbr(n % 10);
-		}
-		else
-		{
-			ft_putchar(n + '0');
-		}
+		result[i] = s[len];
+		i++;
+		len--;
 	}
+	return result;
 }

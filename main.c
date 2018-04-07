@@ -82,9 +82,9 @@ int main(void)
     // char join1[4] = "hot";     //still need to test
     // char join2[6] = "cocoa";
     //printf("%s\n", ft_strjoin(join1, join2));
-    char lcat1[4] = "Kit";
-    char lcat2[10] = "Katherine";
-    printf("%zu\n", ft_strlcat(lcat1, lcat2, 3));
+    // char lcat1[4] = "Kit";
+    // char lcat2[10] = "Katherine";
+    // printf("%zu\n", ft_strlcat(lcat1, lcat2, 3));
     // char mem1[11] = "'--------'\0";
     // printf("before memset: %s\n", mem1);
     // ft_memset(mem1 + 1, '.', 8*sizeof(char));
@@ -197,5 +197,9 @@ int main(void)
 	// // }
 	// splitwords = ft_strsplit(ss_test, ' ');
 	// 	printf("the word we're accessing: %s", splitwords[1]);
+	// printf("result of itoa: %s\n", ft_itoa(42));
+	// printf("result of itoa: %s\n", ft_itoa(101));
+	printf("result of itoa: %s\n", ft_itoa(-2147483648));
+	// printf("result of itoa: %s\n", ft_itoa(0));
     return (0);
 }

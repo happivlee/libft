@@ -10,38 +10,51 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
-//
-// //converts the input integer into its ascii representation
-// char *ft_itoa(int n)
-// {
-// 	char c;
-// 	if (n >= 10)
-// 		ft_itoa(n / 10);
-// 	c = n + '0';
-// 	return (&c);
-// }
-//
-// char *ft_strrev(char *s)
-// {
-// 	int len;
-// 	int i;
-// 	char *result;
-//
-// 	len = ft_strlen(s);
-// 	result = ft_strdup(s);
-// 	i = 0;
-// 	while (len)
-// 	{
-// 		result[i] = s[len];
-// 		i++;
-// 		len--;
-// 	}
-// 	return result;
-// }
+#include "libft.h"
 
-//count num of digits
+static int	ft_count_digits(int n)
+{
+	int		count;
+	long	ln;
 
-//allocate memory
+	ln = (long)n;
+	count = 1;
+	if (ln < 0)
+	{
+		ln = -ln;
+		count++;
+	}
+	while (ln > 9)
+	{
+		ln = ln / 10;
+		count++;
+	}
+	return (count);
+}
 
-//put nbr backwards (str rev? or just put it in from end!)
+char *ft_itoa(int n)
+{
+	char	*result;
+	int		count;
+	long 	ln;
+
+	ln = (long)n;
+	count = ft_count_digits(ln);
+	result = ft_strnew(count);
+	if (!result)
+		return (NULL);
+	if (ln == 0)
+		result[0] = '0';
+	if (ln < 0)
+		{
+			ln = -ln;
+			result[0] = '-';
+		}
+	while (ln != 0)
+	{
+		result[count - 1] = ln % 10 + '0';
+		ln = ln / 10;
+		count--;
+	}
+	return (result);
+}

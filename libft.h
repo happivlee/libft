@@ -18,6 +18,13 @@
 #include <stdlib.h>
 #include <string.h>
 
+typedef struct	s_list
+{
+	void		*content;
+	size_t		content_size;
+	struct s_list	*next;
+}		t_list;
+
 size_t	ft_strlen(const char *str);
 char	*ft_strdup(const char *s1);
 char	*ft_strcpy(char *dst, const char *src);
@@ -67,5 +74,7 @@ char	**ft_strsplit(char const *s, char c);
 int	ft_countwords(char const *s, char c);
 int ft_countchars(const char *s, int c);
 char *ft_itoa(int n);
+t_list	*ft_lstnew(void const *content, size_t content_size);
+void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 
 #endif

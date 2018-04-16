@@ -10,9 +10,43 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+//#include "libft.h"
 #include <stdlib.h>
 #include <string.h>
+
+#include <stdio.h>
+#include <unistd.h>
+
+typedef struct	s_list
+{
+	void		*content;
+	size_t		content_size;
+	struct s_list	*next;
+}		t_list;
+
+void *ft_memcpy(void *dst, const void *src, size_t n);
+
+t_list	*ft_lstnew(void const *content, size_t content_size)
+{
+	t_list	*newlst;
+
+	if (!(newlst = (t_list *)malloc(sizeof(*newlst))))
+		return (NULL);
+	if (content == NULL)
+	{
+		newlst->content = NULL;
+		newlst->content_size = 0;
+	}
+	else
+	{
+		if(!(newlst->content = malloc(content_size)))
+			return (NULL);
+		ft_memcpy(newlst->content, content, content_size);
+		newlst->content_size = content_size;
+	}
+	newlst->next = NULL;
+	return (newlst);
+}
 
 int main(void)
 {
@@ -199,7 +233,16 @@ int main(void)
 	// 	printf("the word we're accessing: %s", splitwords[1]);
 	// printf("result of itoa: %s\n", ft_itoa(42));
 	// printf("result of itoa: %s\n", ft_itoa(101));
-	printf("result of itoa: %s\n", ft_itoa(-2147483648));
+	//printf("result of itoa: %s\n", ft_itoa(-2147483648));
 	// printf("result of itoa: %s\n", ft_itoa(0));
+	int content0 = 5;
+	size_t content_size0 = 4;
+	t_list *lst0 = ft_lstnew(&content0, content_size0);
+	printf("list content is: %d\n", *((int *)lst0->content));
+	// int content1 = 50;  //attempt to test lstdelone - but don't know how to create a del function
+	// size_t content_size1 = 4;
+	// t_list *lst1 = ft_lstnew(&content1, content_size1);
+	// lst0->next = lst1;
+	// ft_lstdelone(lst0,)
     return (0);
 }

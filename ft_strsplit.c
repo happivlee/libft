@@ -21,11 +21,11 @@ char	**ft_strsplit(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	curr_word = -1;
+	curr_word = 0;
 	str_index = 0;
 	if (!(wordlist = (char **)malloc(sizeof(char *) * (wordcount(s, c) + 1))))
 		return (NULL);
-	while (s[str_index] && curr_word++ < wordcount(s, c))
+	while (s[str_index] && curr_word < wordcount(s, c))
 	{
 		curr_word_index = 0;
 		if (!(wordlist[curr_word] = ft_strnew(charcount(&s[str_index], c))))
@@ -34,6 +34,7 @@ char	**ft_strsplit(char const *s, char c)
 			str_index++;
 		while (s[str_index] && s[str_index] != c && s[str_index] != '\0')
 			wordlist[curr_word][curr_word_index++] = s[str_index++];
+		curr_word++;
 	}
 	wordlist[curr_word] = NULL;
 	return (wordlist);

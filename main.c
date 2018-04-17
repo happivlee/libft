@@ -13,6 +13,7 @@
 #include "libft.h"
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 
 int	main(void)
 {
@@ -197,6 +198,9 @@ int	main(void)
 	// // }
 	// splitwords = ft_strsplit(ss_test, ' ');
 	// 	printf("the word we're accessing: %s", splitwords[1]);
+	char **splitwords2;
+	splitwords2 = ft_strsplit("couxcou", 'x');
+	printf("the word we're accessing: %s", splitwords2[2]);
 	// printf("result of itoa: %s\n", ft_itoa(42));
 	// printf("result of itoa: %s\n", ft_itoa(101));
 	//printf("result of itoa: %s\n", ft_itoa(-2147483648));

@@ -6,13 +6,13 @@
 /*   By: vlee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/01 16:02:35 by vlee              #+#    #+#             */
-/*   Updated: 2018/03/01 16:02:45 by vlee             ###   ########.fr       */
+/*   Updated: 2018/04/16 20:35:27 by vlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char *result;
 

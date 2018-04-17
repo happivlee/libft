@@ -6,7 +6,7 @@
 /*   By: vlee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/26 19:28:02 by vlee              #+#    #+#             */
-/*   Updated: 2018/03/26 19:28:13 by vlee             ###   ########.fr       */
+/*   Updated: 2018/04/16 20:28:30 by vlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strmap(char const *s, char (*f)(char))
 {
 	size_t		i;
-	char 	*result;
+	char		*result;
 
 	i = 0;
 	if (s == NULL || f == NULL)

@@ -6,13 +6,13 @@
 /*   By: vlee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/22 19:49:34 by vlee              #+#    #+#             */
-/*   Updated: 2018/03/22 19:49:43 by vlee             ###   ########.fr       */
+/*   Updated: 2018/04/16 20:07:45 by vlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_strclr(char *s)
+void	ft_strclr(char *s)
 {
 	if (s != 0)
 		ft_memset(s, '\0', ft_strlen(s));

@@ -6,7 +6,7 @@
 /*   By: vlee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/27 15:58:58 by vlee              #+#    #+#             */
-/*   Updated: 2018/03/27 15:59:07 by vlee             ###   ########.fr       */
+/*   Updated: 2018/04/16 20:46:05 by vlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	char *result;
+
 	if (s == NULL || len == 0)
 		return (NULL);
 	result = ft_memalloc(len + 1);

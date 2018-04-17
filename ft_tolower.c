@@ -6,16 +6,16 @@
 /*   By: vlee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/08 19:43:56 by vlee              #+#    #+#             */
-/*   Updated: 2018/03/08 19:43:58 by vlee             ###   ########.fr       */
+/*   Updated: 2018/04/16 20:48:46 by vlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int   ft_tolower(int c)
+int	ft_tolower(int c)
 {
-    if (c >= 65 && c<= 90)
-        return (c + 32);
-    else
-        return (c);
+	if (c >= 65 && c <= 90)
+		return (c + 32);
+	else
+		return (c);
 }

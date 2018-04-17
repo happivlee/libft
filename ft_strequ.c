@@ -6,7 +6,7 @@
 /*   By: vlee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/27 12:31:35 by vlee              #+#    #+#             */
-/*   Updated: 2018/03/27 12:31:46 by vlee             ###   ########.fr       */
+/*   Updated: 2018/04/16 20:24:33 by vlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strequ(char const *s1, char const *s2)
 {
-	if(s1 == NULL || s2 == NULL)
+	if (s1 == NULL || s2 == NULL)
 		return (0);
 	if (ft_strcmp(s1, s2) != 0)
 		return (0);

@@ -6,7 +6,7 @@
 /*   By: vlee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 17:53:58 by vlee              #+#    #+#             */
-/*   Updated: 2018/03/30 17:54:06 by vlee             ###   ########.fr       */
+/*   Updated: 2018/04/16 19:48:10 by vlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ static int	ft_count_digits(int n)
 	return (count);
 }
 
-char *ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	char	*result;
 	int		count;
-	long 	ln;
+	long	ln;
 
 	ln = (long)n;
 	count = ft_count_digits(ln);
@@ -46,10 +46,10 @@ char *ft_itoa(int n)
 	if (ln == 0)
 		result[0] = '0';
 	if (ln < 0)
-		{
-			ln = -ln;
-			result[0] = '-';
-		}
+	{
+		ln = -ln;
+		result[0] = '-';
+	}
 	while (ln != 0)
 	{
 		result[count - 1] = ln % 10 + '0';

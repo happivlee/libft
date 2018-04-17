@@ -6,17 +6,17 @@
 /*   By: vlee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/06 15:54:14 by vlee              #+#    #+#             */
-/*   Updated: 2018/04/06 15:54:22 by vlee             ###   ########.fr       */
+/*   Updated: 2018/04/16 20:44:14 by vlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strrev(char *s)
+char	*ft_strrev(char *s)
 {
-	int len;
-	int i;
-	char *result;
+	int		len;
+	int		i;
+	char	*result;
 
 	len = ft_strlen(s);
 	result = ft_strdup(s);
@@ -27,5 +27,5 @@ char *ft_strrev(char *s)
 		i++;
 		len--;
 	}
-	return result;
+	return (result);
 }

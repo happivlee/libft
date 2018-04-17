@@ -1,35 +1,34 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: abchan <marvin@42.fr>                      +#+  +:+       +#+         #
+#    By: vlee <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/02/19 17:17:06 by abchan            #+#    #+#              #
-#    Updated: 2018/03/26 15:52:48 by abchan           ###   ########.fr        #
+#    Created: 2018/03/01 19:01:39 by vlee              #+#    #+#              #
+#    Updated: 2018/04/17 15:02:28 by vlee             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-
-LIBFT = ft_atoi.c \
+HEADER = libft.h
+OPTION = -c $(HEADER)
+FLAG = -Wall -Werror -Wextra
+SRC = charcount.c \
+		ft_atoi.c \
 		ft_bzero.c \
-		ft_countdigits.c \
 		ft_isalnum.c \
 		ft_isalpha.c \
 		ft_isascii.c \
 		ft_isdigit.c \
-		ft_isprime.c \
 		ft_isprint.c \
 		ft_itoa.c \
-		ft_lstsize.c \
 		ft_lstadd.c \
 		ft_lstdel.c \
 		ft_lstdelone.c \
 		ft_lstiter.c \
 		ft_lstmap.c \
 		ft_lstnew.c \
-		ft_maxvalue.c \
 		ft_memalloc.c \
 		ft_memccpy.c \
 		ft_memchr.c \
@@ -38,7 +37,6 @@ LIBFT = ft_atoi.c \
 		ft_memdel.c \
 		ft_memmove.c \
 		ft_memset.c \
-		ft_powerof.c \
 		ft_putchar.c \
 		ft_putchar_fd.c \
 		ft_putendl.c \
@@ -76,20 +74,21 @@ LIBFT = ft_atoi.c \
 		ft_strtrim.c \
 		ft_tolower.c \
 		ft_toupper.c \
-		ft_wordcount.c \
-		print_bits.c
-
-OFILES = *.o
+		wordcount.c
+OBJECT = *.o
 
 all: $(NAME)
 
 $(NAME):
-	gcc -Wall -Wextra -Werror -c $(LIBFT) libft.h
-	ar cr $(NAME) $(OFILES)
-	ranlib $(NAME)
+	gcc $(FLAG) $(OPTION) $(SRC)
+	ar cr $(NAME) $(OBJECT)
+
 clean:
-	/bin/rm -f $(OFILES)
+	/bin/rm -f $(OBJECT)
+
 fclean: clean
 	/bin/rm -f $(NAME) libft.h.gch
+
 re: fclean all
 
+.PHONY: clean fclean all re

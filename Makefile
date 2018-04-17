@@ -1,19 +1,17 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: vlee <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/03/01 19:01:39 by vlee              #+#    #+#              #
-#    Updated: 2018/04/17 15:02:28 by vlee             ###   ########.fr        #
+#    Created: 2018/04/17 15:22:56 by vlee              #+#    #+#              #
+#    Updated: 2018/04/17 15:26:08 by vlee             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-HEADER = libft.h
-OPTION = -c $(HEADER)
-FLAG = -Wall -Werror -Wextra
+
 SRC = charcount.c \
 		ft_atoi.c \
 		ft_bzero.c \
@@ -76,21 +74,19 @@ SRC = charcount.c \
 		ft_toupper.c \
 		wordcount.c
 
-OBJECT = *.o
+OFILES = *.o
 
 all: $(NAME)
 
 $(NAME):
-	gcc $(FLAG) $(OPTION) $(SRC)
-	ar cr $(NAME) $(OBJECT)
+	gcc -Wall -Wextra -Werror -c $(SRC) libft.h
+	ar cr $(NAME) $(OFILES)
 	ranlib $(NAME)
 
 clean:
-	/bin/rm -f $(OBJECT)
+	/bin/rm -f $(OFILES)
 
 fclean: clean
 	/bin/rm -f $(NAME) libft.h.gch
 
 re: fclean all
-
-.PHONY: clean fclean all re

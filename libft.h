@@ -87,5 +87,7 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int				wordcount(char const *s, char c);
 int				charcount(const char *s, int c);
 char			*ft_strrev(char *s);
+char			*ft_strtrim(char const *s);
+void			ft_striter(char *s, void (*f)(char *));
 
 #endif

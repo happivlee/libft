@@ -75,6 +75,7 @@ SRC = charcount.c \
 		ft_tolower.c \
 		ft_toupper.c \
 		wordcount.c
+
 OBJECT = *.o
 
 all: $(NAME)
@@ -82,6 +83,7 @@ all: $(NAME)
 $(NAME):
 	gcc $(FLAG) $(OPTION) $(SRC)
 	ar cr $(NAME) $(OBJECT)
+	ranlib $(NAME)
 
 clean:
 	/bin/rm -f $(OBJECT)

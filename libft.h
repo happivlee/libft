@@ -89,5 +89,6 @@ int				charcount(const char *s, int c);
 char			*ft_strrev(char *s);
 char			*ft_strtrim(char const *s);
 void			ft_striter(char *s, void (*f)(char *));
+int				ft_isspace(char c);
 
 #endif

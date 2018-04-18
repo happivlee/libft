@@ -12,7 +12,7 @@
 
 NAME = libft.a
 
-SRC = charcount.c \
+SRC =	ft_ccount.c \
 		ft_atoi.c \
 		ft_bzero.c \
 		ft_isalnum.c \
@@ -73,14 +73,14 @@ SRC = charcount.c \
 		ft_strtrim.c \
 		ft_tolower.c \
 		ft_toupper.c \
-		wordcount.c
+		ft_wcount.c
 
 OFILES = *.o
 
 all: $(NAME)
 
 $(NAME):
-	gcc -Wall -Wextra -Werror -c $(SRC) libft.h
+	gcc -Wall -Wextra -Werror -c $(SRC)
 	ar cr $(NAME) $(OFILES)
 	ranlib $(NAME)
 
@@ -88,6 +88,6 @@ clean:
 	/bin/rm -f $(OFILES)
 
 fclean: clean
-	/bin/rm -f $(NAME) libft.h.gch
+	/bin/rm -f $(NAME)
 
 re: fclean all

@@ -6,7 +6,7 @@
 /*   By: vlee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/20 17:18:27 by vlee              #+#    #+#             */
-/*   Updated: 2018/04/16 22:16:47 by vlee             ###   ########.fr       */
+/*   Updated: 2018/04/17 17:18:36 by vlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,8 @@ int				ft_strequ(char const *s1, char const *s2);
 int				ft_strnequ(char const *s1, char const *s2, size_t n);
 char			*ft_strsub(char const *s, unsigned int start, size_t len);
 char			**ft_strsplit(char const *s, char c);
-int				wordcount(char const *s, char c);
-int				charcount(const char *s, int c);
+int				ft_wcount(char const *s, char c);
+int				ft_ccount(const char *s, int c);
 char			*ft_itoa(int n);
 void			ft_putendl(char const *s);
 void			ft_putendl_fd(char const *s, int fd);

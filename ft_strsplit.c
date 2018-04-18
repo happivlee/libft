@@ -6,7 +6,7 @@
 /*   By: vlee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/27 17:25:11 by vlee              #+#    #+#             */
-/*   Updated: 2018/04/16 22:28:37 by vlee             ###   ########.fr       */
+/*   Updated: 2018/04/17 17:17:35 by vlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ char	**ft_strsplit(char const *s, char c)
 		return (NULL);
 	curr_word = 0;
 	str_index = 0;
-	if (!(wordlist = (char **)malloc(sizeof(char *) * (wordcount(s, c) + 1))))
+	if (!(wordlist = (char **)malloc(sizeof(char *) * (ft_wcount(s, c) + 1))))
 		return (NULL);
-	while (s[str_index] && curr_word < wordcount(s, c))
+	while (s[str_index] && curr_word < ft_wcount(s, c))
 	{
 		curr_word_index = 0;
-		if (!(wordlist[curr_word] = ft_strnew(charcount(&s[str_index], c))))
+		if (!(wordlist[curr_word] = ft_strnew(ft_ccount(&s[str_index], c))))
 			return (NULL);
 		while (s[str_index] && s[str_index] == c && s[str_index] != '\0')
 			str_index++;

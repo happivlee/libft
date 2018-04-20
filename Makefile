@@ -19,6 +19,8 @@ SRC =	ft_ccount.c \
 		ft_isalpha.c \
 		ft_isascii.c \
 		ft_isdigit.c \
+		ft_isodd.c \
+		ft_ispositive \
 		ft_isprint.c \
 		ft_isspace.c \
 		ft_itoa.c \

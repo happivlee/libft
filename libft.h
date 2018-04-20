@@ -90,5 +90,7 @@ char			*ft_strrev(char *s);
 char			*ft_strtrim(char const *s);
 void			ft_striter(char *s, void (*f)(char *));
 int				ft_isspace(char c);
+int				ft_ispositive(int n);
+int				ft_isodd(int n);
 
 #endif
